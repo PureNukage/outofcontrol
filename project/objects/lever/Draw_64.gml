@@ -8,6 +8,7 @@ if input.controlledUnit > -1 and abs(point_distance(x,y,input.controlledUnit.x,i
 	
 	if input.keyInteract {
 		closed = !closed
+		sound.playEffect(snd_boink)
 		//	The lever is now set to "open"
 		if !closed {
 			if pairedObject > -1 {

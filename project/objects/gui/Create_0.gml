@@ -60,7 +60,8 @@ function drawHacking() {
 					input.controlledUnit.inControl = false	
 				}
 				input.controlledUnit = hackingUnit
-				keyboard_string = ""	
+				keyboard_string = ""
+				sound.playEffect(snd_assimilated)
 			}
 			
 			if point_in_rectangle(hackingCharX,hackingCharY,lineX-lineWidth,lineY-lineHeight,lineX,lineY) {
@@ -100,6 +101,7 @@ function drawHacking() {
 						}
 						input.controlledUnit = hackingUnit
 						keyboard_string = ""
+						sound.playEffect(snd_assimilated)
 					}
 				}
 			} else {
