@@ -16,22 +16,6 @@ idleWalkTimer = -1
 
 mustCloseClamp = false
 
-function openDoor() {
-	with lever if pairedObject.object_index == door {
-		var X = x
-		var Y = y + 36
-	}
-	if pathfind(path, x,y, X,Y) {
-		debug.log("I can make it to the switch to open the door!")
-		
-		pos = 0
-		x_goto = path_get_point_x(path,pos)
-		y_goto = path_get_point_y(path,pos)
-		states = states.move
-		movespeed = 7
-	}
-}
-
 function idleWalk() {
 	with lever if pairedObject.object_index == barrelClamp {
 		var X = x + irandom_range(-240,240)
@@ -46,12 +30,7 @@ function idleWalk() {
 		states = states.move
 		movespeed = 3
 	}
-	//	I can't get back to the switch!
-	else {
-		//openDoor()
-	}
-	
-	
+
 }	
 
 function closeClamp() {

@@ -12,3 +12,5 @@ if instance_position(x,y,ball) {
 	ragDoll.spawnRagdoll()
 	instance_destroy()	
 }
+
+depth = -1

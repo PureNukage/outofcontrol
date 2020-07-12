@@ -5,7 +5,7 @@ if !game.paused {
 	{
 		case states.free:
 	
-			speed = 0
+			//speed = 0
 	
 			if !barrelClamp.closed closeClamp()
 			
@@ -42,7 +42,7 @@ if !game.paused {
 					x_goto = path_get_point_x(path, pos)
 					y_goto = path_get_point_y(path, pos)
 				
-					//if !barrelClamp.closed and !mustCloseClamp closeClamp()
+					if !barrelClamp.closed and !mustCloseClamp closeClamp()
 				}
 			} else {
 				if mustCloseClamp {
@@ -54,15 +54,19 @@ if !game.paused {
 						}
 					 }	
 				}
-				move_towards_point(x_goto,y_goto,movespeed)	
+				if !barrelClamp.closed and !mustCloseClamp closeClamp()
+				debug.log("Moving towards my point")
 			}
+			move_towards_point(x_goto,y_goto,movespeed)	
+			var Direction = point_direction(x,y,x_goto,y_goto)
+			applyForce(Direction, movespeed)
 		
 		break
 	}
 	}
 	
 	else {
-		speed = 0
+		//speed = 0
 		movespeed = 5
 		playerMovement()	
 	}
@@ -89,7 +93,7 @@ if !game.paused {
 }
 
 else {
-	speed = 0	
+	//speed = 0	
 }
 
 depth = -y
