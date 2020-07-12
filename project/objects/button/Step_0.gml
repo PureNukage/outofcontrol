@@ -16,7 +16,7 @@ event_inherited()
 
 if place_meeting(x,y,class_obstacle) {
 	var Col = instance_place(x,y,class_obstacle)
-	if closed {
+	if closed and Col.onGround {
 		switch(Col.object_index)
 		{
 			case box:

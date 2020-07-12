@@ -4,6 +4,7 @@ movespeed = 5
 inControl = false
 hackable = true
 onGround = false
+obstacle = false
 hover = true
 air = 150
 z = y - air

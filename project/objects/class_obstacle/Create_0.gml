@@ -75,7 +75,8 @@ function applyMovementAndCollisionCheck() {
 					var collided = false
 					for(var c=0;c<ds_list_size(list);c++) {
 						var Collision = list[| c]
-						if Collision.onGround collided = true
+						if Collision.obstacle collided = true
+						//if !Collision.onGround collided = false
 						//else if !Collision.onGround and (Collision.air > air) collided = true
 					}
 					if !collided x += sign(xx)
@@ -90,7 +91,8 @@ function applyMovementAndCollisionCheck() {
 					var collided = false
 					for(var c=0;c<ds_list_size(list);c++) {
 						var Collision = list[| c]
-						if Collision.onGround collided = true
+						if Collision.obstacle collided = true
+						//if !Collision.onGround collided = false
 						//else if !Collision.onGround and (Collision.air > air) collided = true
 					}
 					if !collided y += sign(yy)
