@@ -15,6 +15,7 @@ if !game.paused {
 	
 	event_inherited()
 	
+	var list = ds_list_create()
 	//	Check for boxes underneath
 	if pickingUp > -1 {
 		if input.keyInteract {
@@ -24,18 +25,22 @@ if !game.paused {
 			pickingUp.pickupState = 0
 			pickingUp = -1
 		}
-	} else if place_meeting(x,groundY, class_obstacle) {
-		var Collision = instance_place(x,groundY, class_obstacle)
+	} else if instance_place_list(x,groundY, class_obstacle, list,true) {
+		for(var c=0;c<ds_list_size(list);c++) {
+			var Collision = list[| c]
+			//var Collision = instance_place(x,groundY, class_obstacle)
 			
-		if Collision.object_index == player or Collision.object_index == box {
-			if input.keyInteract {
-				Collision.onGround = false
-				Collision.hover = true
-				pickingUp = Collision
-				Collision.dronePickup()
+			if Collision.object_index == player or Collision.object_index == box {
+				if input.keyInteract and pickingUp == -1 {
+					Collision.onGround = false
+					Collision.hover = true
+					pickingUp = Collision
+					Collision.dronePickup()
+				}
 			}
 		}
 	}
+	ds_list_destroy(list)
 } else {
 	image_speed = 0	
 }
