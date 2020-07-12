@@ -15,7 +15,16 @@ and abs(point_distance(x,y-20,input.controlledUnit.x,input.controlledUnit.y)) < 
 		//	The lever is now set to "open"
 		if !closed {
 			if pairedObject > -1 {
-				pairedObject.open()	
+				var disableMyself = false
+				if pairedObject.object_index == stop {
+					var disableMyself = true
+					app.previouslyFollowing = input.controlledUnit
+					input.controlledUnit.inControl = false
+					input.controlledUnit = -1
+					app.ballFollow = true
+				}
+				pairedObject.open()
+				if disableMyself pairedObject = -1
 			}
 		}
 		//	The lever is now set to "closed"

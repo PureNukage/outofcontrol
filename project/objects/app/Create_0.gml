@@ -3,9 +3,13 @@ creator = "@PureNukage"
 
 newText = 180
 
+ballFollow = false
+
 lerpValue = 0
 color = make_color_rgb(255,211,25)
 colorNext = 1
+
+previouslyFollowing = -1
 
 var Layer = "Instances"
 instance_create_layer(0,0,Layer,game)

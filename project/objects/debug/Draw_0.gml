@@ -13,8 +13,13 @@ if on {
 		draw_set_alpha(1)
 	}
 	
-	draw_set_alpha(.5)
-	mp_grid_draw(grid.mpGrid)
-	draw_set_alpha(1)
+	if instance_exists(ball) with ball {
+		draw_set_color(c_red)
+		physics_draw_debug()	
+	}
+	
+	//draw_set_alpha(.5)
+	//mp_grid_draw(grid.mpGrid)
+	//draw_set_alpha(1)
 	
 }
