@@ -3,3 +3,9 @@ if game.paused {
 } else {
 	image_speed = 1	
 }
+
+if Direction == up or Direction == down {
+	image_angle = 90	
+} else {
+	image_angle = 0	
+}

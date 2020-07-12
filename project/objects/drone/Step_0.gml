@@ -30,7 +30,8 @@ if !game.paused {
 			var Collision = list[| c]
 			//var Collision = instance_place(x,groundY, class_obstacle)
 			
-			if Collision.object_index == player or Collision.object_index == box {
+			if Collision.object_index == player or Collision.object_index == box 
+			or Collision.object_index == explosive {
 				if input.keyInteract and pickingUp == -1 {
 					Collision.onGround = false
 					Collision.hover = true

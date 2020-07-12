@@ -21,7 +21,7 @@ function endHacking() {
 	
 	hacking = false
 	hackingUnit = -1
-	game.paused = false
+	//game.paused = false
 	hackingCharX = -1
 	hackingCharY = -1
 	hackingNumber = -1
@@ -54,7 +54,7 @@ function drawHacking() {
 			if input.mouseRightPress {
 				debug.log("Hacking was a success!")
 				hackingStage = 1
-				hackingSolvedTime = 0//120
+				hackingSolvedTime = 120
 				if input.controlledUnit > -1 and input.controlledUnit != hackingUnit {
 					input.controlledUnit.inControl = false
 				}
@@ -62,6 +62,7 @@ function drawHacking() {
 				hackingUnit.inControl = true
 				keyboard_string = ""
 				sound.playEffect(snd_assimilated_voice)
+				game.paused = false
 			}
 			
 			if point_in_rectangle(hackingCharX,hackingCharY,lineX-lineWidth,lineY-lineHeight,lineX,lineY) {
@@ -94,7 +95,7 @@ function drawHacking() {
 					} else {
 						debug.log("Hacking was a success!")
 						hackingStage = 1
-						hackingSolvedTime = 0//120
+						hackingSolvedTime = 120
 						if input.controlledUnit > -1 and input.controlledUnit != hackingUnit {
 							input.controlledUnit.inControl = false
 						}
@@ -102,6 +103,7 @@ function drawHacking() {
 						hackingUnit.inControl = true
 						keyboard_string = ""
 						sound.playEffect(snd_assimilated_voice)
+						game.paused = false
 					}
 				}
 			} else {

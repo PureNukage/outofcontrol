@@ -43,6 +43,8 @@ shadow = {
 }
 
 function beltMovement() {
+	var oldMask = mask_index
+	mask_index = s_person_collision
 	if place_meeting(x,y,belt) {
 		var Belt = instance_place(x,y,belt)
 		var xDirection = 0
@@ -59,6 +61,7 @@ function beltMovement() {
 		yy += yDirection * Belt.Speed
 
 	}
+	mask_index = oldMask
 }
 
 function applyMovementAndCollisionCheck() {
