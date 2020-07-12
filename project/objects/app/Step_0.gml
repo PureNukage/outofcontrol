@@ -1,3 +1,7 @@
+if time.stream == 1 {
+	instance_create_layer(0,0,"Instances",grid)	
+}
+
 if input.controlledUnit > -1 {
 	x = lerp(x,input.controlledUnit.x,0.3)
 	y = lerp(y,input.controlledUnit.y,0.3)

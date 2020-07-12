@@ -116,6 +116,7 @@ function drawHacking() {
 				debug.log("Hacking failed")
 				keyboard_string = ""
 				sound.playEffect(snd_assimilated_fail_voice)
+				game.paused = false
 			}
 			
 		break

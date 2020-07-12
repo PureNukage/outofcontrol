@@ -14,6 +14,7 @@ thrust = 0
 onGround = true
 groundX = x
 groundY = y
+clamped = false
 
 hover = false
 
@@ -45,8 +46,8 @@ shadow = {
 function beltMovement() {
 	var oldMask = mask_index
 	mask_index = s_person_collision
-	if place_meeting(x,y,belt) {
-		var Belt = instance_place(x,y,belt)
+	if instance_position(x,y,belt) {
+		var Belt = instance_position(x,y,belt)
 		var xDirection = 0
 		var yDirection = 0
 		if Belt.Direction == left or Belt.Direction == right {
@@ -78,7 +79,20 @@ function applyMovementAndCollisionCheck() {
 					var collided = false
 					for(var c=0;c<ds_list_size(list);c++) {
 						var Collision = list[| c]
-						if Collision.obstacle collided = true
+						if Collision.object_index == lazers {
+							if object_index == explosive {
+								if Collision.sprite_index == s_lazers {
+									if sprite_index != s_explosion blowUp()
+									instance_destroy(Collision)	
+								}
+							} else if object_index == box {
+									
+							} else collided = true
+						} else if Collision.object_index == hole {
+							if object_index != box collided = true
+						} else if Collision.object_index == explosive {
+							
+						} else if Collision.obstacle collided = true
 						//if !Collision.onGround collided = false
 						//else if !Collision.onGround and (Collision.air > air) collided = true
 					}
@@ -94,7 +108,17 @@ function applyMovementAndCollisionCheck() {
 					var collided = false
 					for(var c=0;c<ds_list_size(list);c++) {
 						var Collision = list[| c]
-						if Collision.obstacle collided = true
+						if Collision.object_index == lazers {
+							if object_index == explosive {
+								Collision.blowUp()
+							} else if object_index == box {
+									
+							} else collided = true
+						} else if Collision.object_index == hole {
+							if object_index != box collided = true
+						} else if Collision.object_index == explosive {
+							
+						} else if Collision.obstacle collided = true
 						//if !Collision.onGround collided = false
 						//else if !Collision.onGround and (Collision.air > air) collided = true
 					}
@@ -178,4 +202,10 @@ function dronePickup() {
 function applyForce(Direction, Force) {
 	xx += lengthdir_x(Force, Direction)
 	yy += lengthdir_y(Force, Direction)
+}
+	
+function checkForDeletion() {
+	if place_meeting(x,y,deleteStuff) {
+		instance_destroy()
+	}
 }

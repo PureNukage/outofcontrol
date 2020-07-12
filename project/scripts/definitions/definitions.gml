@@ -1,5 +1,6 @@
 enum states {
 	free,
+	move,
 }
 
 #macro up 0

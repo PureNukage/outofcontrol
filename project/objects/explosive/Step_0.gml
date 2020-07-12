@@ -6,4 +6,10 @@ if !game.paused {
 	event_inherited()
 }
 
-depth = -groundY - abs(z - y)
+if sprite_index == s_explosion {
+	depth = -10000
+	blowingUp()
+}
+else depth = -groundY - abs(z - y)
+
+checkForDeletion()

@@ -7,3 +7,5 @@ if !game.paused {
 }
 
 depth = -groundY - abs(z - y)
+
+checkForDeletion()

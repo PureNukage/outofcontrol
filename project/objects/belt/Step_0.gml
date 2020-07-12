@@ -5,7 +5,7 @@ if game.paused {
 }
 
 if Direction == up or Direction == down {
-	image_angle = 90	
+	sprite_index = s_conveyorVertical
 } else {
-	image_angle = 0	
+	sprite_index = s_conveyorHorizontal
 }
