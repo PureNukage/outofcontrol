@@ -10,6 +10,8 @@ function open() {
 	image_speed = 1
 	
 	if pairedObject > -1 pairedObject.open()
+	
+	sound.playEffect(snd_button)
 }
 
 function close() {

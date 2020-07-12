@@ -1,4 +1,4 @@
-effectVolume = 0//.6
+effectVolume = .6
 
 musicVolume = 0//.4
 

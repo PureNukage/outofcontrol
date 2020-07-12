@@ -8,6 +8,10 @@ pos = 0
 path = path_add()
 movespeed = 3
 
+inControl = false
+
+hackable = true
+
 idleWalkTimer = -1
 
 mustCloseClamp = false
@@ -35,10 +39,16 @@ function idleWalk() {
 	}
 	if pathfind(path, x,y, X,Y) {
 		debug.log("I am idlewalking!")	
+		
+		pos = 0
+		x_goto = path_get_point_x(path,pos)
+		y_goto = path_get_point_y(path,pos)
+		states = states.move
+		movespeed = 3
 	}
 	//	I can't get back to the switch!
 	else {
-		openDoor()
+		//openDoor()
 	}
 	
 	

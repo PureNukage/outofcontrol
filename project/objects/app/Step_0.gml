@@ -1,5 +1,7 @@
-if time.stream == 1 {
-	instance_create_layer(0,0,"Instances",grid)	
+if instance_number(lazers) == 2 {
+	if !audio_is_playing(snd_laser) audio_play_sound(snd_laser, 0, true)	
+} else if instance_number(lazers) == 1 {
+	if audio_is_playing(snd_laser) audio_stop_sound(snd_laser)	
 }
 
 if input.controlledUnit > -1 {

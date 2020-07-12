@@ -5,8 +5,12 @@ gridHeight = room_height / cellHeight
 
 mpGrid = mp_grid_create(0,0,gridWidth,gridHeight,cellWidth,cellHeight)
 
-mp_grid_add_instances(mpGrid, wall, true)
+function gridScan() {
 
-mp_grid_add_instances(mpGrid, door, true)
+	mp_grid_add_instances(mpGrid, wall, true)
 
-mp_grid_add_instances(mpGrid, lazers, true)
+	mp_grid_add_instances(mpGrid, door, true)
+
+	mp_grid_add_instances(mpGrid, lazers, true)
+	
+}

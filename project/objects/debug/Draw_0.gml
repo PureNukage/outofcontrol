@@ -13,4 +13,8 @@ if on {
 		draw_set_alpha(1)
 	}
 	
+	draw_set_alpha(.33)
+	mp_grid_draw(grid.mpGrid)
+	draw_set_alpha(1)
+	
 }

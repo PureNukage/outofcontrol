@@ -185,10 +185,18 @@ function dronePickup() {
 				x = lerp(x,other.x,0.1)
 				z -= 2
 				if time.seconds_switch debug.log("I am being picked up!")
+				
+				if object_index == keeper {
+					idleWalkTimer = irandom_range(30,60)
+					pos = 0
+					states = states.free
+					speed = 0
+				}
 			} else {
 				z = fullyGrabbedY
 				pickupState = 1
 				debug.log("Fully grabbed!")
+				sound.playEffect(snd_pickup)
 			}
 		break
 		case 1:

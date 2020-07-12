@@ -1,7 +1,9 @@
 var centerX = display_get_gui_width()/2
 var centerY = display_get_gui_height()/2
 
-if input.controlledUnit > -1 and input.controlledUnit.object_index == player and abs(point_distance(x,y-20,input.controlledUnit.x,input.controlledUnit.y)) < 50 {
+if input.controlledUnit > -1 and 
+(input.controlledUnit.object_index == player or input.controlledUnit.object_index == keeper)
+and abs(point_distance(x,y-20,input.controlledUnit.x,input.controlledUnit.y)) < 50 {
 	var scale = 6
 	draw_set_color(c_yellow)
 	draw_set_halign(fa_center)
