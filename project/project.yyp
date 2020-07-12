@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"button","path":"objects/button/button.yy",},"order":18,},
+    {"id":{"name":"s_poster","path":"sprites/s_poster/s_poster.yy",},"order":18,},
     {"id":{"name":"s_emitter","path":"sprites/s_emitter/s_emitter.yy",},"order":1,},
     {"id":{"name":"wall","path":"objects/wall/wall.yy",},"order":12,},
     {"id":{"name":"lever","path":"objects/lever/lever.yy",},"order":16,},

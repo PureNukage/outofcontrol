@@ -9,7 +9,7 @@ hacking = false
 function startHacking(ID) {
 	hacking = true
 	hackingUnit = ID
-	game.paused = true
+	//game.paused = true
 	hackingCharX = display_get_gui_width()/2 + 256
 	hackingCharY = display_get_gui_height()/2 - 192
 	hackingNumber = irandom_range(000,999)

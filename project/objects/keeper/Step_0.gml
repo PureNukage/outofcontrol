@@ -62,6 +62,7 @@ if !game.paused {
 	}
 	
 	else {
+		speed = 0
 		movespeed = 5
 		playerMovement()	
 	}

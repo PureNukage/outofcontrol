@@ -1,6 +1,8 @@
 version = "0.0.0"
 creator = "@PureNukage"
 
+newText = 180
+
 lerpValue = 0
 color = make_color_rgb(255,211,25)
 colorNext = 1

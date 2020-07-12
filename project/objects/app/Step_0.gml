@@ -1,5 +1,8 @@
 if instance_number(lazers) == 2 {
-	if !audio_is_playing(snd_laser) audio_play_sound(snd_laser, 0, true)	
+	if !audio_is_playing(snd_laser) {
+		audio_play_sound(snd_laser, 0, true)	
+		audio_sound_gain(snd_laser, sound.effectVolume, 0)	
+	}
 } else if instance_number(lazers) == 1 {
 	if audio_is_playing(snd_laser) audio_stop_sound(snd_laser)	
 }
