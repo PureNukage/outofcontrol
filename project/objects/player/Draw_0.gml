@@ -1,13 +1,7 @@
-shadow.draw()
-//draw_set_color(c_black)
-//var XX = x-16
-//var YY = y
-//var XX2 = x+16
-//draw_ellipse(XX,YY, XX2,YY,false)
-
+shadow.draw(false)
 
 if !inControl {
-	draw_self()	
+	draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,image_alpha)	
 } else {
 	draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_aqua,image_alpha)	
 }

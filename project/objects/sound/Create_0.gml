@@ -1,6 +1,6 @@
-effectVolume = .6
+effectVolume = 0//.6
 
-musicVolume = .4
+musicVolume = 0//.4
 
 function playEffect(index) {
 	

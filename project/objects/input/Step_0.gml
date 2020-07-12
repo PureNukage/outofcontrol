@@ -9,16 +9,15 @@ mouseRightPress = mouse_check_button_pressed(mb_right)
 
 keySpacePress = keyboard_check_pressed(vk_space)
 
-keyInteract = keyboard_check_pressed(ord("E"))
+keyInteractPress = keyboard_check_pressed(ord("E"))
+keyInteract = keyboard_check(ord("E"))
 
 if keySpacePress game.paused = !game.paused
 
-with class_player mask_index = s_person_collision
+with class_player { if object_index == player mask_index = s_person_collision }
 if instance_position(mouse_x,mouse_y,class_player) {
 	var Instance = instance_position(mouse_x,mouse_y,class_player)
 	
-	//if Instance.object_index == class_player {//and !Instance.inControl {
-		if input.mouseLeftPress gui.startHacking(Instance)
-	//}
+	if input.mouseLeftPress and gui.hackingStage == -1 gui.startHacking(Instance)
 }
-with class_player mask_index = s_person
+with class_player { if object_index == player mask_index = s_person }

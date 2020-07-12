@@ -1,12 +1,15 @@
 event_inherited()
 
-movespeed = 7
-obstacle = false
+movespeed = 5
 inControl = false
 hackable = true
-z = 100
+onGround = false
+hover = true
+air = 100
+z = y - air
 
 shadow.width = 64
 shadow.height = 18
-shadow.z = z
 shadow.alpha = .4
+
+pickingUp = -1

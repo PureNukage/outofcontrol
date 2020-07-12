@@ -54,7 +54,7 @@ function drawHacking() {
 			if input.mouseRightPress {
 				debug.log("Hacking was a success!")
 				hackingStage = 1
-				hackingSolvedTime = 120
+				hackingSolvedTime = 0//120
 				hackingUnit.inControl = true
 				if input.controlledUnit > -1 {
 					input.controlledUnit.inControl = false	
@@ -94,7 +94,7 @@ function drawHacking() {
 					} else {
 						debug.log("Hacking was a success!")
 						hackingStage = 1
-						hackingSolvedTime = 120
+						hackingSolvedTime = 0//120
 						hackingUnit.inControl = true
 						if input.controlledUnit > -1 {
 							input.controlledUnit.inControl = false	

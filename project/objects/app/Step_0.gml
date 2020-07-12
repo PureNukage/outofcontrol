@@ -1,6 +1,6 @@
 if input.controlledUnit > -1 {
-	x = input.controlledUnit.x
-	y = input.controlledUnit.y
+	x = lerp(x,input.controlledUnit.x,0.3)
+	y = lerp(y,input.controlledUnit.y,0.3)
 }
 
 #region		Camera Zoom

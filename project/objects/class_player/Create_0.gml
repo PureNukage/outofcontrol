@@ -1,21 +1,19 @@
 event_inherited()
 
-shadow = {
-	width: 36,
-	height: 12,
-	z: 0,
-	alpha: .6,
-	draw: function() {
-		var oldDepth = other.depth
-		other.depth = 1
-		draw_set_color(c_black)
-		draw_set_alpha(alpha)
-		var x1 = other.x - width/2 - 1
-		var y1 = other.y-height/2 + z
-		var x2 = other.x+width/2
-		var y2 = other.y+height/2 + z
-		draw_ellipse(x1,y1, x2,y2,false)
-		other.depth = oldDepth
-		draw_set_alpha(1)
-	}
+function playerMovement() {
+	if inControl { 
+		hspd = input.keyRight - input.keyLeft
+		vspd = input.keyDown - input.keyUp
+
+		if hspd != 0 or vspd != 0 {
+	
+			var Direction = point_direction(0,0,hspd,vspd)
+			
+			if hspd > 0 image_xscale = 1
+			else if hspd < 0 image_xscale = -1
+	
+			applyForce(Direction, movespeed)
+	
+		}
+	}	
 }
