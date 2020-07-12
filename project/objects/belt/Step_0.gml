@@ -9,3 +9,5 @@ if Direction == up or Direction == down {
 } else {
 	sprite_index = s_conveyorHorizontal
 }
+
+depth = -1

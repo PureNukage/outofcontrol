@@ -39,6 +39,7 @@
     {"id":{"name":"s_hole","path":"sprites/s_hole/s_hole.yy",},"order":17,},
     {"id":{"name":"snd_pickup","path":"sounds/snd_pickup/snd_pickup.yy",},"order":12,},
     {"id":{"name":"block","path":"objects/block/block.yy",},"order":29,},
+    {"id":{"name":"s_title","path":"sprites/s_title/s_title.yy",},"order":37,},
     {"id":{"name":"s_ball","path":"sprites/s_ball/s_ball.yy",},"order":32,},
     {"id":{"name":"emitter","path":"objects/emitter/emitter.yy",},"order":15,},
     {"id":{"name":"s_clamp_open","path":"sprites/s_clamp_open/s_clamp_open.yy",},"order":15,},
@@ -56,6 +57,7 @@
     {"id":{"name":"ball","path":"objects/ball/ball.yy",},"order":28,},
     {"id":{"name":"s_ragdoll_left_arm_hand","path":"sprites/s_ragdoll_left_arm_hand/s_ragdoll_left_arm_hand.yy",},"order":21,},
     {"id":{"name":"grid","path":"objects/grid/grid.yy",},"order":24,},
+    {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},"order":0,},
     {"id":{"name":"lazers","path":"objects/lazers/lazers.yy",},"order":20,},
     {"id":{"name":"class_obstacle","path":"objects/class_obstacle/class_obstacle.yy",},"order":7,},
     {"id":{"name":"explosive","path":"objects/explosive/explosive.yy",},"order":19,},
@@ -87,7 +89,7 @@
     {"id":{"name":"drone","path":"objects/drone/drone.yy",},"order":9,},
     {"id":{"name":"s_door","path":"sprites/s_door/s_door.yy",},"order":7,},
     {"id":{"name":"definitions","path":"scripts/definitions/definitions.yy",},"order":0,},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
+    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":1,},
   ],
   "Options": [
     {"name":"Amazon Fire","path":"options/amazonfire/options_amazonfire.yy",},
@@ -108,6 +110,7 @@
     "children": [],
   },
   "RoomOrder": [
+    {"name":"Room2","path":"rooms/Room2/Room2.yy",},
     {"name":"Room1","path":"rooms/Room1/Room1.yy",},
   ],
   "Folders": [

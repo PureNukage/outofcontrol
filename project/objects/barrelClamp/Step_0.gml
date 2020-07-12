@@ -9,3 +9,5 @@ if closed {
 } else {
 	sprite_index = s_clamp_open	
 }
+
+depth = -1

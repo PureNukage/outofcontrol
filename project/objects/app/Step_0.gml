@@ -7,24 +7,27 @@ if instance_number(lazers) == 3 {
 	if audio_is_playing(snd_laser) audio_stop_sound(snd_laser)	
 }
 
-if input.controlledUnit > -1 {
-	x = lerp(x,input.controlledUnit.x,0.3)
-	y = lerp(y,input.controlledUnit.y,0.3)
-} else if ballFollow {
-	x = lerp(x,ball.x,0.3)
-	y = lerp(y,ball.y,0.3)
-}
+if room == Room1 {
 
-if !ballFollow and input.controlledUnit = -1 and previouslyFollowing > -1 {
-	input.controlledUnit = previouslyFollowing
-	previouslyFollowing = -1
-	input.controlledUnit.inControl = true
-	instance_create_layer(3896,1850,"Instances",endGame)
-}
+	if input.controlledUnit > -1 {
+		x = lerp(x,input.controlledUnit.x,0.3)
+		y = lerp(y,input.controlledUnit.y,0.3)
+	} else if ballFollow {
+		x = lerp(x,ball.x,0.3)
+		y = lerp(y,ball.y,0.3)
+	}
 
-audio_falloff_set_model(audio_falloff_linear_distance)
-audio_listener_orientation(0,1,0, 0,0,1)
-audio_listener_position(x,y,0)
+	if !ballFollow and input.controlledUnit = -1 and previouslyFollowing > -1 {
+		input.controlledUnit = previouslyFollowing
+		previouslyFollowing = -1
+		input.controlledUnit.inControl = true
+		instance_create_layer(3455,1800,"Instances",endGame)
+		input.controlledUnit.x = 3455
+		input.controlledUnit.y = 1744
+		app.x = 3455
+		app.y = 1744
+	}
+}
 
 #region		Camera Zoom
 

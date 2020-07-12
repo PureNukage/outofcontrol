@@ -29,3 +29,5 @@ if place_meeting(x,y,class_obstacle) {
 else {
 	if !closed close()	
 }
+
+depth = -1

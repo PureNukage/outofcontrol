@@ -11,14 +11,38 @@ colorNext = 1
 
 previouslyFollowing = -1
 
-var Layer = "Instances"
-instance_create_layer(0,0,Layer,game)
-instance_create_layer(0,0,Layer,input)
-instance_create_layer(0,0,Layer,debug)
-instance_create_layer(0,0,Layer,gui)
-instance_create_layer(0,0,Layer,time)
-instance_create_layer(0,0,Layer,sound)
-instance_create_layer(0,0,"Instances",grid)	
+spawned = false
+
+flashTime = 120
+flashTimer = flashTime
+
+roomPrevious = -1
+roomCurrent = room
+roomPrevious = room
+
+//function spawnGameObjects() {
+//	spawned = true	
+	
+//	var Layer = "Instances"
+//	instance_create_layer(0,0,Layer,game)
+//	instance_create_layer(0,0,Layer,input)
+//	instance_create_layer(0,0,Layer,debug)
+//	instance_create_layer(0,0,Layer,gui)
+//	instance_create_layer(0,0,Layer,time)
+//	instance_create_layer(0,0,Layer,sound)
+//	instance_create_layer(0,0,"Instances",grid)	
+//}
+
+if room = Room1 {
+	var Layer = "Instances"
+	instance_create_layer(0,0,Layer,game)
+	instance_create_layer(0,0,Layer,input)
+	instance_create_layer(0,0,Layer,debug)
+	instance_create_layer(0,0,Layer,gui)
+	instance_create_layer(0,0,Layer,time)
+	instance_create_layer(0,0,Layer,sound)
+	instance_create_layer(0,0,"Instances",grid)	
+}
 
 #region Camera
 
@@ -84,7 +108,7 @@ instance_create_layer(0,0,"Instances",grid)
 	anchorX = -1
 	anchorY = -1
 	
-	zoom_level = .65
+	zoom_level = 1
 	default_zoom_width = camera_get_view_width(camera)
 	default_zoom_height = camera_get_view_height(camera)
 

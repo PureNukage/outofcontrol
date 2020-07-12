@@ -10,4 +10,4 @@ if !game.paused {
 
 }
 
-depth = -y
+depth = -y + -z

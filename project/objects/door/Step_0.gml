@@ -10,3 +10,4 @@ if closed and image_index == 0 {
 	mp_grid_clear_rectangle(grid.mpGrid, bbox_left,bbox_top, bbox_right,bbox_bottom)
 }
 	
+depth = -1

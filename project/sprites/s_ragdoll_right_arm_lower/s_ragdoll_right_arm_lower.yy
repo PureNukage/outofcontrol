@@ -7,9 +7,9 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 38,
+  "bbox_left": 37,
   "bbox_right": 55,
-  "bbox_top": 56,
+  "bbox_top": 54,
   "bbox_bottom": 71,
   "HTile": false,
   "VTile": false,
@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"1b1dac56-e47a-47f4-bda6-5dd0c2aee300","path":"sprites/s_ragdoll_right_arm_lower/s_ragdoll_right_arm_lower.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"1b1dac56-e47a-47f4-bda6-5dd0c2aee300","path":"sprites/s_ragdoll_right_arm_lower/s_ragdoll_right_arm_lower.yy",},"LayerId":{"name":"6ccdc4c7-2a09-4b95-907f-a73bb098c528","path":"sprites/s_ragdoll_right_arm_lower/s_ragdoll_right_arm_lower.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_ragdoll_right_arm_lower","path":"sprites/s_ragdoll_right_arm_lower/s_ragdoll_right_arm_lower.yy",},"resourceVersion":"1.0","name":"1b1dac56-e47a-47f4-bda6-5dd0c2aee300","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"9d8486b6-f583-4dc9-917a-eeec8de9beb2","path":"sprites/s_ragdoll_right_arm_lower/s_ragdoll_right_arm_lower.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"9d8486b6-f583-4dc9-917a-eeec8de9beb2","path":"sprites/s_ragdoll_right_arm_lower/s_ragdoll_right_arm_lower.yy",},"LayerId":{"name":"b02c62c0-baf1-4b92-8a87-bd905ff89313","path":"sprites/s_ragdoll_right_arm_lower/s_ragdoll_right_arm_lower.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"s_ragdoll_right_arm_lower","path":"sprites/s_ragdoll_right_arm_lower/s_ragdoll_right_arm_lower.yy",},"resourceVersion":"1.0","name":"9d8486b6-f583-4dc9-917a-eeec8de9beb2","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"s_ragdoll_right_arm_lower","path":"sprites/s_ragdoll_right_arm_lower/s_ragdoll_right_arm_lower.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"72a8300f-0411-476c-abaf-45febb4fa102","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1b1dac56-e47a-47f4-bda6-5dd0c2aee300","path":"sprites/s_ragdoll_right_arm_lower/s_ragdoll_right_arm_lower.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"4886a10c-4507-4acb-a62d-2b7956d5521d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9d8486b6-f583-4dc9-917a-eeec8de9beb2","path":"sprites/s_ragdoll_right_arm_lower/s_ragdoll_right_arm_lower.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"6ccdc4c7-2a09-4b95-907f-a73bb098c528","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"b02c62c0-baf1-4b92-8a87-bd905ff89313","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Sprites",
