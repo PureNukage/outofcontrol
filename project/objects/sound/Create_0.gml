@@ -1,6 +1,6 @@
-effectVolume = 0//.6
+effectVolume = .6
 
-musicVolume = 0//.4
+musicVolume = .4
 
 function playEffect(index) {
 	
@@ -11,5 +11,5 @@ function playEffect(index) {
 	
 }
 
-audio_play_sound(snd_music_track0, 0, true)
-audio_sound_gain(snd_music_track0, musicVolume, 0)
+audio_play_sound(snd_music_track1, 0, true)
+audio_sound_gain(snd_music_track1, musicVolume, 0)

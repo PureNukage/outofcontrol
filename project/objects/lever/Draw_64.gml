@@ -5,11 +5,11 @@ if input.controlledUnit > -1 and input.controlledUnit.object_index == player and
 	var scale = 6
 	draw_set_color(c_yellow)
 	draw_set_halign(fa_center)
-	draw_text_transformed(centerX,centerY-256,"Press E to interact",scale,scale,0)
+	draw_text_transformed(centerX,centerY-256,"Press <Space> to interact",scale,scale,0)
 	
 	if input.keyInteractPress {
 		closed = !closed
-		sound.playEffect(snd_boink)
+		sound.playEffect(snd_door)
 		//	The lever is now set to "open"
 		if !closed {
 			if pairedObject > -1 {

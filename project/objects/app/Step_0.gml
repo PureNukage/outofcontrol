@@ -3,6 +3,10 @@ if input.controlledUnit > -1 {
 	y = lerp(y,input.controlledUnit.y,0.3)
 }
 
+audio_falloff_set_model(audio_falloff_linear_distance)
+audio_listener_orientation(0,1,0, 0,0,1)
+audio_listener_position(x,y,0)
+
 #region		Camera Zoom
 
 //zoom_level = clamp((zoom_level + (mouse_wheel_down()-mouse_wheel_up())*0.1),0.25,1.0)

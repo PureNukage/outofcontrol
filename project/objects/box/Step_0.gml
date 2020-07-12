@@ -6,4 +6,4 @@ if !game.paused {
 	event_inherited()
 }
 
-depth = -y
+depth = -groundY - abs(z - y)

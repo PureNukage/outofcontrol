@@ -5,7 +5,7 @@ inControl = false
 hackable = true
 onGround = false
 hover = true
-air = 100
+air = 150
 z = y - air
 
 shadow.width = 64

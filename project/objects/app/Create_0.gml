@@ -1,6 +1,10 @@
 version = "0.0.0"
 creator = "@PureNukage"
 
+lerpValue = 0
+color = make_color_rgb(255,211,25)
+colorNext = 1
+
 var Layer = "Instances"
 instance_create_layer(0,0,Layer,game)
 instance_create_layer(0,0,Layer,input)

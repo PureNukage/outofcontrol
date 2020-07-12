@@ -55,13 +55,13 @@ function drawHacking() {
 				debug.log("Hacking was a success!")
 				hackingStage = 1
 				hackingSolvedTime = 0//120
-				hackingUnit.inControl = true
-				if input.controlledUnit > -1 {
-					input.controlledUnit.inControl = false	
+				if input.controlledUnit > -1 and input.controlledUnit != hackingUnit {
+					input.controlledUnit.inControl = false
 				}
 				input.controlledUnit = hackingUnit
+				hackingUnit.inControl = true
 				keyboard_string = ""
-				sound.playEffect(snd_assimilated)
+				sound.playEffect(snd_assimilated_voice)
 			}
 			
 			if point_in_rectangle(hackingCharX,hackingCharY,lineX-lineWidth,lineY-lineHeight,lineX,lineY) {
@@ -95,13 +95,13 @@ function drawHacking() {
 						debug.log("Hacking was a success!")
 						hackingStage = 1
 						hackingSolvedTime = 0//120
-						hackingUnit.inControl = true
-						if input.controlledUnit > -1 {
-							input.controlledUnit.inControl = false	
+						if input.controlledUnit > -1 and input.controlledUnit != hackingUnit {
+							input.controlledUnit.inControl = false
 						}
 						input.controlledUnit = hackingUnit
+						hackingUnit.inControl = true
 						keyboard_string = ""
-						sound.playEffect(snd_assimilated)
+						sound.playEffect(snd_assimilated_voice)
 					}
 				}
 			} else {
@@ -113,6 +113,7 @@ function drawHacking() {
 				hackingStage = 2
 				debug.log("Hacking failed")
 				keyboard_string = ""
+				sound.playEffect(snd_assimilated_fail_voice)
 			}
 			
 		break

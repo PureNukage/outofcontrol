@@ -7,9 +7,9 @@ mouseLeftPress = mouse_check_button_pressed(mb_left)
 
 mouseRightPress = mouse_check_button_pressed(mb_right)
 
-keySpacePress = keyboard_check_pressed(vk_space)
+//keySpacePress = keyboard_check_pressed(vk_space)
 
-keyInteractPress = keyboard_check_pressed(ord("E"))
-keyInteract = keyboard_check(ord("E"))
+keyInteractPress = keyboard_check_pressed(vk_space)
+keyInteract = keyboard_check(vk_space)
 
 controlledUnit = -1

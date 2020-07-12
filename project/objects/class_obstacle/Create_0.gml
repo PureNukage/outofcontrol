@@ -9,11 +9,8 @@ xx = 0
 yy = 0
 air = 0
 z = y
-thrust = 0
 grav = 1
-fric = 1
-force = 0
-accel = 0
+thrust = 0
 onGround = true
 groundX = x
 groundY = y
@@ -56,51 +53,64 @@ function beltMovement() {
 		} else {
 			if Belt.Direction == up yDirection = -1
 			else yDirection = 1
-		}
+		}	
+
 		xx += xDirection * Belt.Speed
 		yy += yDirection * Belt.Speed
+
 	}
 }
 
 function applyMovementAndCollisionCheck() {
 	//	Collision Check and move object
 	if (xx != 0 or yy != 0) {
-
+	
 		if onGround {
+			var list = ds_list_create()
+			
 			for(var _XX=0;_XX<abs(floor(xx));_XX++) {
-		
-				if !place_meeting(x+sign(xx),y,class_obstacle) x += sign(xx)
+				
+				if !instance_place_list(x+sign(xx),y,class_obstacle,list,true) x += sign(xx)
 				else {
-					var Collision = instance_place(x+sign(xx),y,class_obstacle)
-					if inControl debug.log("Colliding with object " + string_upper(object_get_name(Collision.object_index)))
-					if inControl debug.log(string_upper(object_get_name(Collision.object_index)) + "'s z is " + string(Collision.z))
-					if !Collision.obstacle x += sign(xx)
-					else if z < (Collision.z + Collision.height) x += sign(xx)
+					var collided = false
+					for(var c=0;c<ds_list_size(list);c++) {
+						var Collision = list[| c]
+						if Collision.onGround collided = true
+						//else if !Collision.onGround and (Collision.air > air) collided = true
+					}
+					if !collided x += sign(xx)
 				}
 		
 			}
 			
 			for(var _YY=0;_YY<abs(floor(yy));_YY++) {
-
-				if !place_meeting(x,y+sign(yy),class_obstacle) y += sign(yy)
+				
+				if !instance_place_list(x,y+sign(yy),class_obstacle,list,true) y += sign(yy)
 				else {
-					var Collision = instance_place(x,y+sign(yy),class_obstacle)
-					if inControl debug.log("Colliding with object " + string_upper(object_get_name(Collision.object_index)))
-					if inControl debug.log(string_upper(object_get_name(Collision.object_index)) + "'s z is " + string(Collision.z))
-					if !Collision.obstacle y += sign(yy)
-					else if z < (Collision.z + Collision.height) y += sign(yy)
+					var collided = false
+					for(var c=0;c<ds_list_size(list);c++) {
+						var Collision = list[| c]
+						if Collision.onGround collided = true
+						//else if !Collision.onGround and (Collision.air > air) collided = true
+					}
+					if !collided y += sign(yy)
 				}
 			}
-		} else {
+			
+			ds_list_destroy(list)
+		} 
+		
+		else {
 			for(var _XX=0;_XX<abs(floor(xx));_XX++) {
 		
 				if !place_meeting(x+sign(xx),groundY,class_obstacle) x += sign(xx)
 				else {
 					var Collision = instance_place(x+sign(xx),groundY,class_obstacle)
-					if inControl debug.log("Colliding with object " + string_upper(object_get_name(Collision.object_index)))
-					if inControl debug.log(string_upper(object_get_name(Collision.object_index)) + "'s z is " + string(Collision.z))
+					//if inControl debug.log("Colliding with object " + string_upper(object_get_name(Collision.object_index)))
+					//if inControl debug.log(string_upper(object_get_name(Collision.object_index)) + "'s z is " + string(Collision.z))
 					if !Collision.obstacle x += sign(xx)
-					else if z < (Collision.z - Collision.height) x += sign(xx)
+					else if Collision.onGround and (Collision.height < air) x += sign(xx)
+					else if !Collision.onGround x += sign(xx)
 				}
 		
 			}
@@ -112,14 +122,17 @@ function applyMovementAndCollisionCheck() {
 					z += sign(yy)
 				} else {
 					var Collision = instance_place(x,groundY+sign(yy),class_obstacle)
-					if inControl debug.log("Colliding with object " + string_upper(object_get_name(Collision.object_index)))
-					if inControl debug.log(string_upper(object_get_name(Collision.object_index)) + "'s z is " + string(Collision.z))
+					//if inControl debug.log("Colliding with object " + string_upper(object_get_name(Collision.object_index)))
+					//if inControl debug.log(string_upper(object_get_name(Collision.object_index)) + "'s z is " + string(Collision.z))
 					if !Collision.obstacle {
 						groundY += sign(yy)
 						z += sign(yy)
-					} else if z < (Collision.z - Collision.height) {
+					} else if Collision.onGround and (Collision.height < air) {
 						groundY += sign(yy)
 						z += sign(yy)	
+					} else if !Collision.onGround {
+						groundY += sign(yy)
+						z += sign(yy)
 					}
 				}
 			}		
@@ -132,23 +145,26 @@ function applyMovementAndCollisionCheck() {
 	
 function dronePickup() {
 	var Height = sprite_get_height(sprite_index)
-	var fullyGrabbedY = other.y + Height - 14
-	x = other.x
+	var fullyGrabbedY = other.y + Height + 40
+	//x = other.x
+	groundY = other.groundY
 	
 	switch(pickupState)
 	{
 		case 0:
 			if y > fullyGrabbedY {
-				yy -= 2
-				air += 2
-				z += 2
+				x = lerp(x,other.x,0.1)
+				z -= 2
+				if time.seconds_switch debug.log("I am being picked up!")
 			} else {
-				y = fullyGrabbedY
+				z = fullyGrabbedY
 				pickupState = 1
+				debug.log("Fully grabbed!")
 			}
 		break
 		case 1:
-			y = fullyGrabbedY
+			z = fullyGrabbedY
+			x = other.x
 		break
 	}
 
